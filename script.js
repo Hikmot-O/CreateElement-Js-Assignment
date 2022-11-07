@@ -2,7 +2,8 @@
 function mk(type, props, children, str = "") {
   const el = document.createElement(type);
 
-  const text = document.createTextNode(str);
+  if (str !== '') const text = document.createTextNode(str);
+  
   if (props) Object.assign(el, props);
 
   if (children) el.append(...children);
